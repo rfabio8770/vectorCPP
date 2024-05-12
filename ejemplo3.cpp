@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	vector<int> v(5);
+
+	for(size_t i = 0; i < v.size(); ++i) {
+		cout << "Elemento: " << i << ": ";
+		cin >> v[i];
+	}
+
+	cout << "Contenido original del vector:\n";
+	for(size_t i = 0; i < v.size(); ++i) {
+		cout << v[i] << " - ";
+	}
+	cout << endl;
+
+	int aux = v[0];
+	for(size_t i = 0; i < v.size() - 1; ++i) {
+		v[i] = v[i+1];
+	}
+	v[v.size()-1] = aux;
+	cout << "Contenido del vector desplazado un lugar a la izquierda:" << endl;
+	for(size_t i = 0; i < v.size(); ++i) {
+		cout << v[i] << " - ";
+	}
+	cout << endl;
+	return 0;
+}
